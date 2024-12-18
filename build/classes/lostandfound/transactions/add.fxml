@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="587.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox layoutX="577.0" layoutY="500.0" prefHeight="28.0" prefWidth="157.0" />
+      <TableView fx:id="studentTable" layoutX="14.0" layoutY="263.0" prefHeight="309.0" prefWidth="381.0">
+         <columns>
+            <TableColumn fx:id="studentID" prefWidth="121.59996795654297" text="Student ID" />
+            <TableColumn fx:id="studentName" prefWidth="258.0" text="Student Name" />
+         </columns>
+      </TableView>
+      <TableView fx:id="ItemTable" layoutX="14.0" layoutY="14.0" prefHeight="235.0" prefWidth="813.0">
+         <columns>
+            <TableColumn fx:id="itemID" prefWidth="89.0" text="Item ID" />
+            <TableColumn fx:id="itemName" prefWidth="165.0" text="Item Name" />
+            <TableColumn fx:id="description" prefWidth="248.0" text="Description" />
+            <TableColumn fx:id="status" prefWidth="159.0" text="Status" />
+            <TableColumn fx:id="location" minWidth="0.0" prefWidth="149.0" text="Location" />
+         </columns>
+      </TableView>
+      <Button fx:id="addTransactionButton" layoutX="423.0" layoutY="544.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="118.0" text="Add Transaction" />
+      <Button fx:id="cancelButton" layoutX="706.0" layoutY="544.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="118.0" text="Cancel" />
+      <Label layoutX="408.0" layoutY="500.0" prefHeight="28.0" prefWidth="157.0" text="Transaction Type">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="424.0" layoutY="262.0" prefHeight="159.0" prefWidth="187.0">
+         <children>
+            <Label layoutY="44.0" prefHeight="36.0" prefWidth="187.0" text="Student ID">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutY="80.0" prefHeight="36.0" prefWidth="187.0" text="Student Name">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutY="6.0" text="Studen Details:" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="622.0" layoutY="262.0" prefHeight="159.0" prefWidth="202.0">
+         <children>
+            <Label layoutY="44.0" prefHeight="36.0" prefWidth="202.0" text="Item Name">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutY="80.0" prefHeight="36.0" prefWidth="202.0" text="Location">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutY="6.0" text="Item Details:" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

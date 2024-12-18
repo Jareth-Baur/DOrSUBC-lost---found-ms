@@ -1,0 +1,44 @@
+-- Drop the database if it already exists
+DROP DATABASE IF EXISTS LostAndFoundDB;
+
+-- Create the database
+CREATE DATABASE LostAndFoundDB;
+
+-- Use the database
+USE LostAndFoundDB;
+
+-- Table: Admin
+CREATE TABLE Admin (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Table: Student
+CREATE TABLE Student (
+    student_idNumber VARCHAR(50) PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL
+);
+
+-- Table: Item
+CREATE TABLE Item (
+    item_id INT PRIMARY KEY AUTO_INCREMENT,
+    item_name VARCHAR(100) NOT NULL,
+    description TEXT,
+    status ENUM('Lost', 'Found', 'Returned') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp for record creation
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Auto-updates on edit
+    location VARCHAR(255)
+);
+
+-- Table: Transaction
+CREATE TABLE Transaction (
+    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+    item_id INT NOT NULL,
+    transaction_type ENUM('Report Lost', 'Report Found', 'Claimed') NOT NULL,
+    date_of_transaction DATE NOT NULL,
+    student_idNumber VARCHAR(50),
+    FOREIGN KEY (item_id) REFERENCES Item(item_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (student_idNumber) REFERENCES Student(student_idNumber) ON DELETE SET NULL ON UPDATE CASCADE
+);
